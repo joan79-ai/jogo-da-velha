@@ -1,0 +1,82 @@
+void velha(){
+    char m[3][3] = {{'-', '-', '-'},{'-','-','-'},{'-','-','-'}};
+    int l, c;
+    int jogada = 0;
+
+    do{
+        cout<<" Jogador 1, escolha uma linha e coluna: ";
+        cin>>l>>c;
+
+    }while(m[l][c] == 'x' or m[l][c] == 'o');
+    m[l][c] = 'o';
+    cout<<"\n\n  0 1 2";
+    for (int i=0; i<3; i++){
+        cout<< endl;
+        cout<<i<<" ";
+        for (int j=0; j<3; j++){
+            cout<< m[i][j]<<" ";
+        }
+    }
+    cout<< "\n\n\n";
+do{
+   cout<<" Jogador 2, escolha uma linha e coluna: ";
+   cin>>l>>c;
+
+   }while(m[l][c] == 'x' or m[l][c] == 'o');
+   m[l][c]='x';
+
+   cout<<"\n\n  0 1 2";
+    for (int i=0; i<3; i++){
+        cout<< endl;
+        cout<<i<<" ";
+        for (int j=0; j<3; j++){
+            cout<< m[i][j]<<" ";
+        }
+    }
+    cout<< "\n\n\n";
+
+
+    /// horizontal
+    if((m[0][0]==m[0][1]) and (m[0][1]==m[0][2])and (m[0][0]!=' ')){
+       return;
+    }else
+    if((m[1][0]==m[1][1]) and (m[1][1]==m[1][2])and (m[1][0]!=' ')){
+        return;
+    }else
+    if((m[2][0]==m[2][1]) and (m[2][1]==m[2][2])and (m[2][0]!=' ')){
+        return;
+
+    ///vertical
+    }else
+    if((m[0][0]==m[1][0]) and (m[1][0]==m[2][0])and (m[0][0]!=' ')){
+        return;
+    }else
+    if((m[0][1]==m[1][1]) and (m[1][1]==m[2][1])and (m[0][1]!=' ')){
+        return;
+    }else
+    if((m[0][2]==m[1][2]) and (m[1][2]==m[2][2])and (m[0][2]!=' ')){
+        return;
+    }else
+
+    ///diagonal
+    if((m[0][0]==m[1][1]) and (m[1][1]==m[2][2])and (m[0][2]!=' ')){
+        return;
+    }else
+    if((m[0][2]==m[1][1]) and (m[1][1]==m[2][0])and (m[0][2]!=' ')){
+        return;
+    }else
+    if(jogada == 9){
+        return;
+        }
+    }
+
+
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+
+    velha();
+    return 0;
+}
